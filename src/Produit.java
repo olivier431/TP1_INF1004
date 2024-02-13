@@ -15,6 +15,12 @@ public class Produit {
         this.dateExpiration = dateExpiration;
     }
 
+    public Produit(String nom, int quantite, int prix) {
+        this.nom = nom;
+        this.quantite = quantite;
+        this.prix = prix;
+    }
+
     public String getNom() {
         return nom;
     }
