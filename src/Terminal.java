@@ -16,6 +16,7 @@ public class Terminal {
     public static int getDigitChoiceFromUser(int minChoice, int maxChoice) {
         int input;
         while (true) {
+            System.out.print("Votre choix: ");
             input = readInt();
             if (isIntInRange(input, minChoice, maxChoice)) {
                 return input;
