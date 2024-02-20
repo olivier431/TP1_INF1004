@@ -33,4 +33,12 @@ public class ProductRepository{
         }
     }
 
+    public void removeProductIsNotInStock(){
+        for (Product product : productList){
+            if (product.getQuantity() == 0){
+                productList.remove(product);
+            }
+        }
+    }
+
 }
