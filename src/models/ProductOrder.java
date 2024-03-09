@@ -1,17 +1,18 @@
+package models;
+
 public class ProductOrder {
     private int quantityOrdered;
     private Product productOrdered;
 
 
     public ProductOrder(int quantityOrdered, Product productOrdered) {
-        if (quantityOrdered > productOrdered.getQuantity()){
+        if (quantityOrdered > productOrdered.getQuantity()) {
             System.out.println("Error: Cannot order more quantity than available in stock.");
-        }else{
+        } else {
             this.quantityOrdered = quantityOrdered;
             this.productOrdered = productOrdered;
             setNewQuantity(productOrdered, quantityOrdered);
         }
-
     }
 
     public int getQuantityOrdered() {

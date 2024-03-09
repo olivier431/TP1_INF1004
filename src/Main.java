@@ -1,7 +1,7 @@
-import java.util.Scanner;
+import menus.MainMenu;
 
 public class Main {
     public static void main(String[] args) {
-        new SystemManager().start();
+        new MainMenu().start();
     }
 }

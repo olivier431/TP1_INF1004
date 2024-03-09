@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6e987df-a367-471a-a4e1-56a871e46bdf" name="Changes" comment="Add Produit.java">
+      <change afterPath="$PROJECT_DIR$/src/menus/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menus/ProductMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menus/StockMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SystemManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terminal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +38,6 @@
   <component name="ProjectId" id="2cK0K3paXcUqifK4aWCwRyz0Hoc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
