@@ -13,11 +13,11 @@ public class ProductRepository {
 
     public Product find(String name){
         for (Product product : productList){
-            if (product.getName().equals(name)){
+            if (product.getName().equalsIgnoreCase(name)){
                 return  product;
             }
         }
-        System.out.println("uqtr.models.Product not found !");
+        System.out.println("Produit non trouvé !");
         return null;
     }
 
@@ -32,17 +32,9 @@ public class ProductRepository {
         Product productToRemove = find(name);
         if (productToRemove != null){
             productList.remove(productToRemove);
-            System.out.println("uqtr.models.Product removed !");
+            System.out.println("Produit retiré !");
         }else{
-            System.out.println("uqtr.models.Product not found. No deletion has been made");
-        }
-    }
-
-    public void removeOutOfStockProducts(){
-        for (Product product : productList){
-            if (product.getQuantity() == 0){
-                productList.remove(product);
-            }
+            System.out.println("Erreur : Produit non trouvé");
         }
     }
 

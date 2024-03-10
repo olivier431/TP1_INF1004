@@ -2,7 +2,6 @@ package uqtr.menus;
 
 import uqtr.helpers.Terminal;
 import uqtr.management.SaleManagement;
-import uqtr.models.Product;
 
 public class SaleMenu extends Menu {
     private final SaleManagement saleManagement;

@@ -2,8 +2,13 @@ package uqtr.management;
 
 import uqtr.database.Database;
 import uqtr.database.ProductRepository;
+import uqtr.helpers.DateGenerator;
 import uqtr.helpers.Terminal;
 import uqtr.models.Product;
+import uqtr.models.ProductUnit;
+import uqtr.stock.StockQueue;
+
+import java.util.Date;
 
 public class StockManagement {
     private final ProductRepository products;
@@ -11,42 +16,44 @@ public class StockManagement {
     public StockManagement() {
         products = Database.getInstance().getProductRepository();
     }
+
     public void add() {
-        System.out.print("Enter product name to add stock: ");
+        System.out.print("Entrer le nom du produit pour lequel ajouter du stock: ");
         String name = Terminal.readStringInput();
         Product productToAddStock = products.find(name);
         if (productToAddStock != null) {
-            System.out.print("Enter quantity to add: ");
-            int quantityToAdd = Terminal.readIntInput();
-            int newQuantity = productToAddStock.getQuantity() + quantityToAdd;
-            productToAddStock.setQuantity(newQuantity);
-            System.out.println("Stock added!");
+            Date expirationDate = null;
+            if (productToAddStock.getStock() instanceof StockQueue) {
+                //Devrait être entré par l'usager, mais jugé non pertinent pour le TP, rentrer une date dans un CLI n'est pas super.
+                expirationDate = DateGenerator.getRandomDateInNextYear();
+            }
+            var unit = new ProductUnit(expirationDate);
+            productToAddStock.getStock().push(unit);
+            System.out.println("Ajouté au stock!");
         } else {
-            System.out.println("Error: Product not found.");
+            System.out.println("Erreur: Produit non trouvé.");
         }
     }
 
     public void remove() {
-        System.out.print("Enter product name to remove stock: ");
+        System.out.print("Entrer le nom du produit pour lequel retirer du stock: ");
         String name = Terminal.readStringInput();
         Product productToRemoveStock = products.find(name);
         if (productToRemoveStock != null) {
-            System.out.print("Enter quantity to remove: ");
+            System.out.print("Entrer la quantité à enlever: ");
             int quantityToRemove = Terminal.readIntInput();
-            if (quantityToRemove <= productToRemoveStock.getQuantity()) {
-                int newQuantity = productToRemoveStock.getQuantity() - quantityToRemove;
-                productToRemoveStock.setQuantity(newQuantity);
-                System.out.println("Stock removed!");
+            if (quantityToRemove <= productToRemoveStock.getStock().getCount()) {
+                productToRemoveStock.getStock().removeQuantity(quantityToRemove);
+                System.out.println("Stock retiré!");
             } else {
-                System.out.println("Error: Not enough stock available to remove.");
+                System.out.println("Erreur : Pas assez de stock disponible.");
             }
         } else {
-            System.out.println("Error: Product not found.");
+            System.out.println("Erreur : Produit non trouvé.");
         }
     }
 
     public void readAll() {
-        products.showAll();
+        //todo
     }
-
 }

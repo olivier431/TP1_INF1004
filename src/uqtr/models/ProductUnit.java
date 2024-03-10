@@ -3,7 +3,6 @@ package uqtr.models;
 import java.util.Date;
 
 public class ProductUnit {
-
     private Date expirationDate;
 
     public ProductUnit(Date expirationDate) {

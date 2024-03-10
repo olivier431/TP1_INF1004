@@ -30,7 +30,7 @@ public class OrderManagement {
                 System.out.println("Error: Not enough stock available to process order.");
             }
         } else {
-            System.out.println("Error: uqtr.models.Product not found or out of stock.");
+            System.out.println("Error: Product not found or out of stock.");
         }
     }
 

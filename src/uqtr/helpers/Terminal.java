@@ -71,6 +71,15 @@ public class Terminal {
         return scanner.nextInt();
     }
 
+    public static double readDoubleInput() {
+        Scanner scanner = new Scanner(System.in);
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Erreur : Veuillez entrer un nombre réel.");
+            scanner.next();
+        }
+        return scanner.nextDouble();
+    }
+
     private static boolean isIntInRange(int input, int min, int max) {
         return input >= min && input <= max;
     }

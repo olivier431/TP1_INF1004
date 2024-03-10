@@ -2,7 +2,7 @@ package uqtr.database;
 
 public class Database {
 
-    private ProductRepository products;
+    private final ProductRepository products;
     private static Database instance;
 
     public static Database getInstance() {
@@ -16,7 +16,9 @@ public class Database {
         return products;
     }
 
+
+    //Private for singleton
     private Database() {
         products = new ProductRepository();
-    } //Private for singleton
+    }
 }

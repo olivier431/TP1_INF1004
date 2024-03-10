@@ -1,20 +1,18 @@
 package uqtr.models;
 
+import uqtr.stock.StockQueue;
+import uqtr.stock.StockRow;
+import uqtr.stock.StockStack;
+
 public class Product {
     private String name;
+    private double price;
+    private final StockRow stock;
 
-    private int price;
-
-    private int quantity;
-
-    public Product(String name, int price, int quantity) {
+    public Product(String name, double price, boolean isPerishable) {
         this.name = name;
         this.price = price;
-        if (quantity >= 0){
-            this.quantity = quantity;
-        }else{
-            this.quantity = 0;
-        }
+        this.stock = isPerishable ? new StockQueue() : new StockStack();
     }
 
     public String getName() {
@@ -25,26 +23,15 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public boolean isInStock(){
-        if (quantity == 0){
-            return false;
-        }
-        return true;
+    public StockRow getStock() {
+        return stock;
     }
 }

@@ -2,8 +2,6 @@ package uqtr.menus;
 
 import uqtr.helpers.Terminal;
 import uqtr.management.OrderManagement;
-import uqtr.models.Product;
-import uqtr.models.ProductOrder;
 
 public class OrderMenu extends Menu {
     private final OrderManagement orderManagement;
