@@ -1,15 +1,17 @@
-package uqtr.models;
+package uqtr.models.order;
 
-public class ProductOrder {
+import uqtr.models.product.Product;
+
+public class OrderRow {
     private final int quantityOrdered;
     private final Product orderedProduct;
-    private final double subTotal;
+    private final double price; //Not to be confused with unit price
 
 
-    public ProductOrder(int quantityOrdered, Product productOrdered) {
+    public OrderRow(int quantityOrdered, Product productOrdered) {
         this.quantityOrdered = quantityOrdered;
         this.orderedProduct = productOrdered;
-        this.subTotal = quantityOrdered * orderedProduct.getPrice();
+        this.price = quantityOrdered * orderedProduct.getUnitPrice();
     }
 
     public int getQuantityOrdered() {
@@ -20,7 +22,7 @@ public class ProductOrder {
         return orderedProduct;
     }
 
-    public double getSubTotal() {
-        return subTotal;
+    public double getPrice() {
+        return price;
     }
 }

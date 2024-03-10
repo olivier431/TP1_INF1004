@@ -18,7 +18,7 @@ public class OrderMenu extends Menu {
     @Override
     public void redirectBasedOnChoice(int choice) {
         switch (choice) {
-            case 1 -> orderManagement.process();
+            case 1 -> orderManagement.order();
             case 2 -> orderManagement.showAll();
             case 3 -> userWantsToExit = true;
         }

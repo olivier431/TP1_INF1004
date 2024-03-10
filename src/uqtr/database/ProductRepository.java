@@ -1,18 +1,18 @@
 package uqtr.database;
 
-import uqtr.models.Product;
+import uqtr.models.product.Product;
 
 import java.util.ArrayList;
 
 public class ProductRepository {
-    private final ArrayList<Product> productList;
+    private final ArrayList<Product> products;
 
     public void add(Product product){
-        productList.add(product);
+        products.add(product);
     }
 
     public Product find(String name){
-        for (Product product : productList){
+        for (Product product : products){
             if (product.getName().equalsIgnoreCase(name)){
                 return  product;
             }
@@ -21,17 +21,17 @@ public class ProductRepository {
         return null;
     }
 
-    //TODO : Bouger dans terminal
+    //TODO : Bouger dans terminal?
     public void showAll(){
-        for (Product product : productList){
-            System.out.println(product.getName() + " " + product.getPrice() + "$" + "\n");
+        for (Product product : products){
+            System.out.println(product.getName() + " " + product.getUnitPrice() + "$" + "\n");
         }
     }
 
     public void remove(String name){
         Product productToRemove = find(name);
         if (productToRemove != null){
-            productList.remove(productToRemove);
+            products.remove(productToRemove);
             System.out.println("Produit retiré !");
         }else{
             System.out.println("Erreur : Produit non trouvé");
@@ -40,7 +40,7 @@ public class ProductRepository {
 
     //Package constructor, only Database should instantiate this class
     ProductRepository() {
-        productList = new ArrayList<>();
+        products = new ArrayList<>();
     }
 
 }

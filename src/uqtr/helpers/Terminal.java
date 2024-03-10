@@ -40,7 +40,7 @@ public class Terminal {
 
     public static void printOrderProcessingMenu() {
         System.out.println("\nTraitement des Commandes:\n");
-        System.out.println("1) Traiter une commande");
+        System.out.println("1) Passer une commande (client)");
         System.out.println("2) Afficher l'historique des commandes");
         System.out.println("3) Retour au menu principal\n");
     }

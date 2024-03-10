@@ -1,6 +1,6 @@
 package uqtr.stock;
 
-import uqtr.models.ProductUnit;
+import uqtr.models.product.ProductUnit;
 
 public abstract class StockRow {
     public abstract ProductUnit pop();

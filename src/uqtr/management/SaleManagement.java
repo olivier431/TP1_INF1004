@@ -1,38 +1,63 @@
 package uqtr.management;
 
 import uqtr.database.Database;
-import uqtr.database.ProductRepository;
+import uqtr.database.OrderRepository;
 import uqtr.helpers.Terminal;
-import uqtr.models.Product;
+import uqtr.models.order.Order;
+import uqtr.models.order.OrderRow;
 
 public class SaleManagement {
 
-    private final ProductRepository products;
+    private final OrderRepository orders;
 
     public SaleManagement() {
-        products = Database.getInstance().getProductRepository();
+        orders = Database.getInstance().getOrderRepository();
     }
 
-    public void add() {
-        System.out.print("Enter product name sold: ");
-        String name = Terminal.readStringInput();
-        Product productSold = products.find(name);
-        if (productSold != null && productSold.getQuantity() > 0) {
-            System.out.print("Enter quantity sold: ");
-            int quantitySold = Terminal.readIntInput();
-            if (quantitySold <= productSold.getQuantity()) {
-                int newQuantity = productSold.getQuantity() - quantitySold;
-                productSold.setQuantity(newQuantity);
-                System.out.println("Sale recorded!");
-            } else {
-                System.out.println("Error: Not enough stock available for sale.");
+    public void confirmSale() {
+        var orderToProcess = orders.peek();
+        if (orderToProcess == null) {
+            System.out.println("Aucune commande en attente !");
+            return;
+        }
+        System.out.printf("Commande à traiter : %d articles différents - %.2f", orderToProcess.getNumberOfRows(), orderToProcess.getTotal());
+        checkStock(orderToProcess);
+        tryToConfirmSale();
+    }
+
+    private void tryToCancelOrder() {
+        System.out.print("Pas assez de stock pour traiter, retarder cette commande ? [O/N] :");
+        var input = Terminal.readStringInput();
+        if (!input.equalsIgnoreCase("O")) return;
+        var order = orders.pop();
+        orders.push(order);
+    }
+
+    private void tryToConfirmSale() {
+        System.out.print("Confirmer cette vente ? [O/N] :");
+        var input = Terminal.readStringInput();
+        if (!input.equalsIgnoreCase("N")) return;
+        var order = orders.pop();
+        updateStock(order);
+        Database.getInstance().getSaleRepository().add(order);
+    }
+
+    private void updateStock(Order order) {
+        for (var row : order.getAllRows()) {
+            row.getOrderedProduct().getStock().removeQuantity(row.getQuantityOrdered());
+        }
+    }
+
+    private void checkStock(Order orderToProcess) {
+        for (var row : orderToProcess.getAllRows()) {
+            if (row.getOrderedProduct().getStock().getCount() < row.getQuantityOrdered()) {
+                tryToCancelOrder();
+                return;
             }
-        } else {
-            System.out.println("Error: uqtr.models.Product not found or out of stock.");
         }
     }
 
     public void showAll() {
-        // Implementer une méthode qui permet de voir l'historique des ventes
+        // todo : Implementer une méthode qui permet de voir l'historique des ventes
     }
 }

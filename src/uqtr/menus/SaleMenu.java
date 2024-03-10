@@ -18,7 +18,7 @@ public class SaleMenu extends Menu {
     @Override
     public void redirectBasedOnChoice(int choice) {
         switch (choice) {
-            case 1 -> saleManagement.add();
+            case 1 -> saleManagement.confirmSale();
             case 2 -> saleManagement.showAll();
             case 3 -> userWantsToExit = true;
         }

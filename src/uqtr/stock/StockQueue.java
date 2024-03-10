@@ -1,6 +1,6 @@
 package uqtr.stock;
 
-import uqtr.models.ProductUnit;
+import uqtr.models.product.ProductUnit;
 
 import java.util.LinkedList;
 import java.util.Queue;

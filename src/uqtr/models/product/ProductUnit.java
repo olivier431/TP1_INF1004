@@ -1,4 +1,4 @@
-package uqtr.models;
+package uqtr.models.product;
 
 import java.util.Date;
 

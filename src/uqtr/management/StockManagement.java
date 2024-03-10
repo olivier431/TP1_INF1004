@@ -4,8 +4,8 @@ import uqtr.database.Database;
 import uqtr.database.ProductRepository;
 import uqtr.helpers.DateGenerator;
 import uqtr.helpers.Terminal;
-import uqtr.models.Product;
-import uqtr.models.ProductUnit;
+import uqtr.models.product.Product;
+import uqtr.models.product.ProductUnit;
 import uqtr.stock.StockQueue;
 
 import java.util.Date;

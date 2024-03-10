@@ -3,7 +3,7 @@ package uqtr.management;
 import uqtr.database.Database;
 import uqtr.database.ProductRepository;
 import uqtr.helpers.Terminal;
-import uqtr.models.Product;
+import uqtr.models.product.Product;
 
 public class ProductManagement {
 
@@ -44,7 +44,7 @@ public class ProductManagement {
             System.out.print("Entrer le nouveau prix: ");
             var newPrice = Terminal.readDoubleInput();
             productToUpdate.setName(newName);
-            productToUpdate.setPrice(newPrice);
+            productToUpdate.setUnitPrice(newPrice);
             System.out.println("Produit modifié!");
         }
     }
