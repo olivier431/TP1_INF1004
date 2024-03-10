@@ -1,11 +1,11 @@
-package database;
+package uqtr.database;
 
-import models.Product;
+import uqtr.models.Product;
 
 import java.util.ArrayList;
 
-public class ProductRepository{
-    private ArrayList<Product> productList = new ArrayList<Product>();
+public class ProductRepository {
+    private final ArrayList<Product> productList;
 
     public void add(Product product){
         productList.add(product);
@@ -17,7 +17,7 @@ public class ProductRepository{
                 return  product;
             }
         }
-        System.out.println("models.Product not found !");
+        System.out.println("uqtr.models.Product not found !");
         return null;
     }
 
@@ -32,9 +32,9 @@ public class ProductRepository{
         Product productToRemove = find(name);
         if (productToRemove != null){
             productList.remove(productToRemove);
-            System.out.println("models.Product removed !");
+            System.out.println("uqtr.models.Product removed !");
         }else{
-            System.out.println("models.Product not found. No deletion has been made");
+            System.out.println("uqtr.models.Product not found. No deletion has been made");
         }
     }
 
@@ -44,6 +44,11 @@ public class ProductRepository{
                 productList.remove(product);
             }
         }
+    }
+
+    //Package constructor, only Database should instantiate this class
+    ProductRepository() {
+        productList = new ArrayList<>();
     }
 
 }

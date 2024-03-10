@@ -1,4 +1,4 @@
-package models;
+package uqtr.models;
 
 public class ProductOrder {
     private int quantityOrdered;

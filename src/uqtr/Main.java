@@ -1,4 +1,4 @@
-import menus.MainMenu;
+package uqtr;
 
 public class Main {
     public static void main(String[] args) {

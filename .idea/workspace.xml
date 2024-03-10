@@ -5,17 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6e987df-a367-471a-a4e1-56a871e46bdf" name="Changes" comment="Add Produit.java">
-      <change afterPath="$PROJECT_DIR$/src/menus/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menus/ProductMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menus/StockMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/ReportGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/database/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/management/OrderManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/management/ProductManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/management/SaleManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/management/StockManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/menus/OrderMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/menus/ProductMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/menus/ReportMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/menus/SaleMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uqtr/menus/StockMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SystemManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/database/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/helpers/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menus/MainMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menus/ProductMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menus/StockMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/models/ProductOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uqtr/models/ProductUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +51,28 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/antoine/Uni/TP1_INF1004/src/uqtr/menus",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/uqtr/menus" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="uqtr.Main" />
       <module name="TP1" />
       <method v="2">
         <option name="Make" enabled="true" />

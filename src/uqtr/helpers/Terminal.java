@@ -1,4 +1,4 @@
-package helpers;
+package uqtr.helpers;
 
 import java.util.Scanner;
 
