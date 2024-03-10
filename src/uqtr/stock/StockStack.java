@@ -2,6 +2,7 @@ package uqtr.stock;
 
 import uqtr.models.product.ProductUnit;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class StockStack extends StockRow {
@@ -21,9 +22,20 @@ public class StockStack extends StockRow {
         stack.push(unit);
     }
 
-    @Override
+    @Override //On pourrait seulement utiliser size(), mais voici une façon récursive pour le TP
     public int getCount() {
-        return stack.size();
+        var stackCopy = new Stack<ProductUnit>();
+        stackCopy.addAll(stack);
+        return countStackDepth(0, stackCopy);
+    }
+
+    private int countStackDepth(int count, Stack<ProductUnit> stackCopy) {
+        try {
+            stackCopy.pop(); //Throws error if stack is empty
+            return countStackDepth(++count, stackCopy);
+        } catch (EmptyStackException e) {
+            return count;
+        }
     }
 
     @Override

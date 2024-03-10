@@ -13,7 +13,12 @@ public class ProductMenu extends Menu {
 
     @Override
     protected void display() {
-        Terminal.printProductManagementMenu();
+        System.out.println("\nGestion des Produits:\n");
+        System.out.println("1) Ajouter un produit");
+        System.out.println("2) Supprimer un produit");
+        System.out.println("3) Modifier un produit");
+        System.out.println("4) Afficher tous les produits");
+        System.out.println("5) Retour au menu principal\n");
     }
 
     @Override

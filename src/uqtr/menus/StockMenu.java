@@ -13,7 +13,11 @@ public class StockMenu extends Menu {
 
     @Override
     protected void display() {
-        Terminal.printStockManagementMenu();
+        System.out.println("\nGestion du Stock:\n");
+        System.out.println("1) Ajouter du stock");
+        System.out.println("2) Retirer du stock");
+        System.out.println("3) Afficher le stock");
+        System.out.println("4) Retour au menu principal\n");
     }
 
     @Override

@@ -16,7 +16,10 @@ public class OrderMenu extends Menu {
 
     @Override
     protected void display() {
-        Terminal.printOrderProcessingMenu();
+        System.out.println("\nTraitement des Commandes/Ventes:\n");
+        System.out.println("1) Passer une commande (client)");
+        System.out.println("2) Traitement des ventes");
+        System.out.println("3) Retour au menu principal\n");
     }
 
     @Override

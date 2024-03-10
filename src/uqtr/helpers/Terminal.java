@@ -3,40 +3,6 @@ package uqtr.helpers;
 import java.util.Scanner;
 
 public class Terminal {
-
-    public static void printStartMenu() {
-        System.out.println("Bienvenue !\n");
-        System.out.println("1) Gérer les produits");
-        System.out.println("2) Gérer le stock");
-        System.out.println("3) Commandes/Ventes");
-        System.out.println("4) Générer un rapport");
-        System.out.println("5) Quitter\n");
-    }
-
-    public static void printStockManagementMenu() {
-        System.out.println("\nGestion du Stock:\n");
-        System.out.println("1) Ajouter du stock");
-        System.out.println("2) Retirer du stock");
-        System.out.println("3) Afficher le stock");
-        System.out.println("4) Retour au menu principal\n");
-    }
-
-    public static void printProductManagementMenu() {
-        System.out.println("\nGestion des Produits:\n");
-        System.out.println("1) Ajouter un produit");
-        System.out.println("2) Supprimer un produit");
-        System.out.println("3) Modifier un produit");
-        System.out.println("4) Afficher tous les produits");
-        System.out.println("5) Retour au menu principal\n");
-    }
-
-    public static void printOrderProcessingMenu() {
-        System.out.println("\nTraitement des Commandes/Ventes:\n");
-        System.out.println("1) Passer une commande (client)");
-        System.out.println("2) Traitement des ventes");
-        System.out.println("3) Retour au menu principal\n");
-    }
-
     public static int getDigitChoiceFromUser(int minChoice, int maxChoice) {
         int input;
         while (true) {

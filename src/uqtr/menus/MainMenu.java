@@ -10,7 +10,12 @@ public class MainMenu extends Menu {
 
     @Override
     protected void display() {
-        Terminal.printStartMenu();
+        System.out.println("Bienvenue !\n");
+        System.out.println("1) Gérer les produits");
+        System.out.println("2) Gérer le stock");
+        System.out.println("3) Commandes/Ventes");
+        System.out.println("4) Générer un rapport");
+        System.out.println("5) Quitter\n");
     }
 
     @Override
