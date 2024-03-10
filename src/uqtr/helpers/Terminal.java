@@ -8,10 +8,9 @@ public class Terminal {
         System.out.println("Bienvenue !\n");
         System.out.println("1) Gérer les produits");
         System.out.println("2) Gérer le stock");
-        System.out.println("3) Traiter les commandes");
-        System.out.println("4) Gérer les ventes");
-        System.out.println("5) Générer un rapport");
-        System.out.println("6) Quitter\n");
+        System.out.println("3) Commandes/Ventes");
+        System.out.println("4) Générer un rapport");
+        System.out.println("5) Quitter\n");
     }
 
     public static void printStockManagementMenu() {
@@ -31,17 +30,10 @@ public class Terminal {
         System.out.println("5) Retour au menu principal\n");
     }
 
-    public static void printSalesManagementMenu() {
-        System.out.println("\nGestion des Ventes:\n");
-        System.out.println("1) Enregistrer une vente");
-        System.out.println("2) Afficher l'historique des ventes");
-        System.out.println("3) Retour au menu principal\n");
-    }
-
     public static void printOrderProcessingMenu() {
-        System.out.println("\nTraitement des Commandes:\n");
+        System.out.println("\nTraitement des Commandes/Ventes:\n");
         System.out.println("1) Passer une commande (client)");
-        System.out.println("2) Afficher l'historique des commandes");
+        System.out.println("2) Traitement des ventes");
         System.out.println("3) Retour au menu principal\n");
     }
 

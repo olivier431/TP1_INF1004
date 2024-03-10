@@ -42,11 +42,11 @@ public class StockManagement {
         if (productToRemoveStock != null) {
             System.out.print("Entrer la quantité à enlever: ");
             int quantityToRemove = Terminal.readIntInput();
-            if (quantityToRemove <= productToRemoveStock.getStock().getCount()) {
+            if (quantityToRemove > 0 && quantityToRemove <= productToRemoveStock.getStock().getCount()) {
                 productToRemoveStock.getStock().removeQuantity(quantityToRemove);
                 System.out.println("Stock retiré!");
             } else {
-                System.out.println("Erreur : Pas assez de stock disponible.");
+                System.out.println("Erreur : Quantité incorrecte ou pas assez de stock disponible.");
             }
         } else {
             System.out.println("Erreur : Produit non trouvé.");
@@ -54,6 +54,8 @@ public class StockManagement {
     }
 
     public void readAll() {
-        //todo
+        for (var product : products.findAll()) {
+            System.out.printf("%s (%.2f$), %d en stock\n", product.getName(), product.getUnitPrice(), product.getStock().getCount());
+        }
     }
 }

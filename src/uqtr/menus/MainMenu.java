@@ -5,23 +5,22 @@ import uqtr.helpers.Terminal;
 public class MainMenu extends Menu {
 
     public MainMenu() {
-        numberOfChoices = 6;
+        numberOfChoices = 5;
     }
 
     @Override
-    public void display() {
+    protected void display() {
         Terminal.printStartMenu();
     }
 
     @Override
-    public void redirectBasedOnChoice(int choice) {
+    protected void redirectBasedOnChoice(int choice) {
         switch (choice) {
-            case 1 -> new ProductMenu().display();
-            case 2 -> new StockMenu().display();
-            case 3 -> new OrderMenu().display();
-            case 4 -> new SaleMenu().display();
-            case 5 -> new ReportMenu().display();
-            case 6 -> userWantsToExit = true;
+            case 1 -> new ProductMenu().start();
+            case 2 -> new StockMenu().start();
+            case 3 -> new OrderMenu().start();
+            case 4 -> new ReportMenu().start();
+            case 5 -> userWantsToExit = true;
         }
     }
 }

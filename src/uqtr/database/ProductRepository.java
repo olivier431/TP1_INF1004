@@ -14,33 +14,21 @@ public class ProductRepository {
     public Product find(String name){
         for (Product product : products){
             if (product.getName().equalsIgnoreCase(name)){
-                return  product;
+                return product;
             }
         }
-        System.out.println("Produit non trouvé !");
         return null;
     }
 
-    //TODO : Bouger dans terminal?
-    public void showAll(){
-        for (Product product : products){
-            System.out.println(product.getName() + " " + product.getUnitPrice() + "$" + "\n");
-        }
+    public ArrayList<Product> findAll(){
+        return products;
     }
 
-    public void remove(String name){
-        Product productToRemove = find(name);
-        if (productToRemove != null){
-            products.remove(productToRemove);
-            System.out.println("Produit retiré !");
-        }else{
-            System.out.println("Erreur : Produit non trouvé");
-        }
+    public void remove(Product product){
+        products.remove(product);
     }
 
-    //Package constructor, only Database should instantiate this class
     ProductRepository() {
         products = new ArrayList<>();
     }
-
 }

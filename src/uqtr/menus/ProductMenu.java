@@ -11,12 +11,13 @@ public class ProductMenu extends Menu {
         productManagement = new ProductManagement();
     }
 
-    public void display() {
+    @Override
+    protected void display() {
         Terminal.printProductManagementMenu();
     }
 
     @Override
-    public void redirectBasedOnChoice(int choice) {
+    protected void redirectBasedOnChoice(int choice) {
         switch (choice) {
             case 1 -> productManagement.add();
             case 2 -> productManagement.remove();

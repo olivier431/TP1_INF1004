@@ -8,11 +8,11 @@ public abstract class Menu {
 
     public void start() {
         while (!userWantsToExit) {
-            Terminal.printStartMenu();
+            display();
             redirectBasedOnChoice(Terminal.getDigitChoiceFromUser(1, 6));
         }
     }
 
-    public abstract void display();
-    public abstract void redirectBasedOnChoice(int choice);
+    protected abstract void display();
+    protected abstract void redirectBasedOnChoice(int choice);
 }

@@ -8,10 +8,6 @@ import java.util.Queue;
 public class OrderRepository {
     private final Queue<Order> orders;
 
-    public OrderRepository() {
-        this.orders = new LinkedList<>();
-    }
-
     public void push(Order order) {
         orders.offer(order);
     }
@@ -22,5 +18,9 @@ public class OrderRepository {
 
     public Order peek() {
         return orders.peek();
+    }
+
+    OrderRepository() {
+        this.orders = new LinkedList<>();
     }
 }

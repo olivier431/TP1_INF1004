@@ -22,17 +22,19 @@ public class OrderManagement {
         do {
             System.out.print("Entrer le nom du produit à commander ([ENTER] pour terminer la commande): ");
             name = Terminal.readStringInput();
-            var row = orderProduct(name);
-            if (row == null) continue;
-            order.addRow(row);
-        } while (name.equals(""));
+            if (!name.equals("")) {
+                var row = orderProduct(name);
+                if (row == null) continue;
+                order.addRow(row);
+            }
+        } while (!name.equals(""));
+        if (order.getAllRows().size() == 0) {
+            System.out.println("Erreur : Une commande ne peut être vide");
+            return;
+        }
         order.confirm();
         Database.getInstance().getOrderRepository().push(order);
-        System.out.printf("Commande effectuée! (Sous-total: %.2f)\n", order.getTotal());
-    }
-
-    public void showAll() {
-        // Implementer une méthode qui permet d'afficher l'historique des commandes
+        System.out.printf("Commande effectuée! (Sous-total: %.2f$)\n", order.getTotal());
     }
 
     private OrderRow orderProduct(String name) {

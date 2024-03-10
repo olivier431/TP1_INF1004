@@ -20,26 +20,29 @@ public class SaleManagement {
             System.out.println("Aucune commande en attente !");
             return;
         }
-        System.out.printf("Commande à traiter : %d articles différents - %.2f", orderToProcess.getNumberOfRows(), orderToProcess.getTotal());
-        checkStock(orderToProcess);
+        System.out.printf("Commande à traiter : %d produit(s) unique(s) - %.2f$\n", orderToProcess.getNumberOfRows(), orderToProcess.getTotal());
+        if (!checkStock(orderToProcess)) return;
         tryToConfirmSale();
     }
 
     private void tryToCancelOrder() {
-        System.out.print("Pas assez de stock pour traiter, retarder cette commande ? [O/N] :");
+        System.out.print("Pas assez de stock pour traiter, retarder cette commande (N pour annuler) ? [O/N] :");
         var input = Terminal.readStringInput();
         if (!input.equalsIgnoreCase("O")) return;
         var order = orders.pop();
         orders.push(order);
+        System.out.println("Commande mise en arrière de la file d'attente.");
     }
 
     private void tryToConfirmSale() {
         System.out.print("Confirmer cette vente ? [O/N] :");
         var input = Terminal.readStringInput();
-        if (!input.equalsIgnoreCase("N")) return;
+        if (!input.equalsIgnoreCase("O")) return;
         var order = orders.pop();
         updateStock(order);
         Database.getInstance().getSaleRepository().add(order);
+        System.out.println("Vente confirmée !");
+
     }
 
     private void updateStock(Order order) {
@@ -48,16 +51,13 @@ public class SaleManagement {
         }
     }
 
-    private void checkStock(Order orderToProcess) {
+    private boolean checkStock(Order orderToProcess) {
         for (var row : orderToProcess.getAllRows()) {
             if (row.getOrderedProduct().getStock().getCount() < row.getQuantityOrdered()) {
                 tryToCancelOrder();
-                return;
+                return false;
             }
         }
-    }
-
-    public void showAll() {
-        // todo : Implementer une méthode qui permet de voir l'historique des ventes
+        return true;
     }
 }

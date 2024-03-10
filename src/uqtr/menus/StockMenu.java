@@ -11,12 +11,13 @@ public class StockMenu extends Menu {
         stockManagement = new StockManagement();
     }
 
-    public void display() {
+    @Override
+    protected void display() {
         Terminal.printStockManagementMenu();
     }
 
     @Override
-    public void redirectBasedOnChoice(int choice) {
+    protected void redirectBasedOnChoice(int choice) {
         switch (choice) {
             case 1 -> stockManagement.add();
             case 2 -> stockManagement.remove();
