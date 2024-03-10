@@ -4,22 +4,26 @@ import uqtr.helpers.Terminal;
 import uqtr.management.ProductManagement;
 import uqtr.models.Product;
 
-public class ProductMenu {
+public class ProductMenu extends Menu {
+    private final ProductManagement productManagement ;
 
-    public static void display() {
-        int choice;
-        var productManagement = new ProductManagement();
-        do {
-            Terminal.printProductManagementMenu();
-            choice = Terminal.getDigitChoiceFromUser(1, 4);
-            switch (choice) {
-                case 1 -> productManagement.add();
-                case 2 -> productManagement.remove();
-                case 3 -> productManagement.update();
-                case 4 -> productManagement.readAll();
+    public ProductMenu() {
+        numberOfChoices = 5;
+        productManagement = new ProductManagement();
+    }
 
-                //todo : show
-            }
-        } while (choice != 4);
+    public void display() {
+        Terminal.printProductManagementMenu();
+    }
+
+    @Override
+    public void redirectBasedOnChoice(int choice) {
+        switch (choice) {
+            case 1 -> productManagement.add();
+            case 2 -> productManagement.remove();
+            case 3 -> productManagement.update();
+            case 4 -> productManagement.readAll();
+            case 5 -> userWantsToExit = true;
+        }
     }
 }

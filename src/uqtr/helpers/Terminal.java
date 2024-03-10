@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class Terminal {
 
-    public static void printStartMessage() {
+    public static void printStartMenu() {
         System.out.println("Bienvenue !\n");
         System.out.println("1) Gérer les produits");
         System.out.println("2) Gérer le stock");
         System.out.println("3) Traiter les commandes");
         System.out.println("4) Gérer les ventes");
-        System.out.println("5) Générer un rapport\n");
+        System.out.println("5) Générer un rapport");
+        System.out.println("6) Quitter\n");
     }
 
     public static void printStockManagementMenu() {
-        System.out.println("\nGestion du Stock:");
+        System.out.println("\nGestion du Stock:\n");
         System.out.println("1) Ajouter du stock");
         System.out.println("2) Retirer du stock");
         System.out.println("3) Afficher le stock");
@@ -22,23 +23,23 @@ public class Terminal {
     }
 
     public static void printProductManagementMenu() {
-        System.out.println("\nGestion des Produits:");
+        System.out.println("\nGestion des Produits:\n");
         System.out.println("1) Ajouter un produit");
         System.out.println("2) Supprimer un produit");
-        System.out.println("3) Mettre à jour un produit");
+        System.out.println("3) Modifier un produit");
         System.out.println("4) Afficher tous les produits");
         System.out.println("5) Retour au menu principal\n");
     }
 
     public static void printSalesManagementMenu() {
-        System.out.println("\nGestion des Ventes:");
+        System.out.println("\nGestion des Ventes:\n");
         System.out.println("1) Enregistrer une vente");
         System.out.println("2) Afficher l'historique des ventes");
         System.out.println("3) Retour au menu principal\n");
     }
 
     public static void printOrderProcessingMenu() {
-        System.out.println("\nTraitement des Commandes:");
+        System.out.println("\nTraitement des Commandes:\n");
         System.out.println("1) Traiter une commande");
         System.out.println("2) Afficher l'historique des commandes");
         System.out.println("3) Retour au menu principal\n");

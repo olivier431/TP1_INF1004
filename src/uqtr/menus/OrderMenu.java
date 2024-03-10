@@ -5,19 +5,24 @@ import uqtr.management.OrderManagement;
 import uqtr.models.Product;
 import uqtr.models.ProductOrder;
 
-public class OrderMenu {
+public class OrderMenu extends Menu {
+    private final OrderManagement orderManagement;
 
-    public static void display() {
-        // Implementer order processing
-        int choice;
-        var orderManagement = new OrderManagement();
-        do {
-            Terminal.printOrderProcessingMenu();
-            choice = Terminal.getDigitChoiceFromUser(1, 2);
-            switch (choice) {
-                case 1 -> orderManagement.process();
-                case 2 -> orderManagement.showAll();
-            }
-        } while (choice != 2);
+    public OrderMenu() {
+        numberOfChoices = 3;
+        orderManagement = new OrderManagement();
+    }
+
+    public void display() {
+        Terminal.printOrderProcessingMenu();
+    }
+
+    @Override
+    public void redirectBasedOnChoice(int choice) {
+        switch (choice) {
+            case 1 -> orderManagement.process();
+            case 2 -> orderManagement.showAll();
+            case 3 -> userWantsToExit = true;
+        }
     }
 }
